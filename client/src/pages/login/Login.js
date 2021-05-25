@@ -2,6 +2,7 @@ import React from 'react'
 import './login.css';
 import imgLogin from '../../assets/img/study.jpg';
 import logoKuepa from '../../assets/img/kuepa.png';
+import { NavLink } from 'react-router-dom';
 
 export const Login = () => {
     return (
@@ -34,7 +35,9 @@ export const Login = () => {
                                 </div>
                                 <div className="form-row d-flex justify-content-center">
                                     <div className="col-lg-7 d-flex justify-content-center">
-                                        <a href="" className="mt-3">Registrarse</a>
+                                        <NavLink exact to="/signup" className="mt-3 mb-5">
+                                            Registrarse
+                                        </NavLink>
                                     </div>
                                 </div>
                             </form>

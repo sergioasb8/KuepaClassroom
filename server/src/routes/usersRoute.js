@@ -4,10 +4,7 @@ const User = require('../models/UserModel.js');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const { getUsers, createUsers, getUser, deleteUsers, updateUsers } = require('../controllers/users.controller.js');
-
 router.route('/')
-    .get(getUsers)
 
     /** ---------- 
      *   Register
@@ -54,12 +51,10 @@ router.route('/')
             // hash the password
             const salt = await bcrypt.genSalt();
             const passwordHash = await bcrypt.hash(password, salt);
-            const userImage = "";
-            const description = "";
 
             /** Save a new user account to the database */
             const newUser = new User({  // creating a new instance of our schema
-                name, lastName, mail, user, passwordHash, userImage, description
+                name, lastName, mail, user, passwordHash
             });
 
             const savedUser = await newUser.save();
