@@ -1,0 +1,27 @@
+.loginContainer {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.061);
+    display: flex;
+    justify-content: center;
+}
+
+
+.loginContainer > section {
+    position: absolute;
+    margin-bottom: 20px;
+}
+
+.row {
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px black;
+}
+
+.img-fluid {
+    border-radius: 30px;
+    max-height: 600px;
+}
