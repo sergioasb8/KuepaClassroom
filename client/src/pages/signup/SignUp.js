@@ -47,7 +47,7 @@ export const SignUp = () => {
         <div className="SignUpContainer">
         <section className="Form my-4">
             <div className="container">
-                <div className="row g-0">
+                <div className="row g-0 rowLogin">
                     <div className="col-lg-5">
                         <img src={imgSignUp}  className="img-fluid" alt="Clases" />
                     </div>

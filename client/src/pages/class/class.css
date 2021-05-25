@@ -1,0 +1,85 @@
+.chatContainer {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    min-height: 500px;
+    height: 100vh;
+    box-shadow: -10px 0px 10px 1px #2b2f5c;
+}
+
+.messagesContainer {
+    min-height: 350px;
+    height: 70vh;
+    background-color: rgb(213, 229, 236);
+}
+
+.navbarClass {
+    height: 8vh;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbarClass > p {
+    width: 180px;
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.navbarClass > button {
+    width: 120px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+
+.navbarClass > button:hover {
+    border: 1px rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.writeContainer {
+    height: 30vh;
+    background-color: rgb(213, 229, 236);
+}
+
+.writeContainer > textarea {
+    height: 23vh;
+    width: 280px;
+    margin-left: 10px;
+    margin-top: 1vh;
+    border-radius: 30px;
+    outline: none;
+    padding: 8px;
+}
+
+.buttonContainer {
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttonContainer > p {
+    width: 180px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.buttonContainer > button {
+    width: 120px;
+    margin-top: -13px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+
+.buttonContainer > button:hover {
+    border: 1px rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
