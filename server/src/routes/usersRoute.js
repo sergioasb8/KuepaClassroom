@@ -15,7 +15,7 @@ router.route('/')
             const { name, lastName, mail, user, password, passwordVerify } = req.body;
 
             /** Validations */
-
+            
             // checking all the inputs have a value
             if(!name || !lastName || !mail || !user || !password || !passwordVerify)
                 return res

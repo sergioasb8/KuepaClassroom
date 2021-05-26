@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-function AuthContextProvider(props) {
+function AuthContextProvider({ children }) {
 
     const [loggedIn, setLoggedIn] = useState(undefined);
     const [loggedUser, setLoggedUser] = useState("");
@@ -22,8 +22,13 @@ function AuthContextProvider(props) {
     }
 
     return (
-        <AuthContext.Provider value={{loggedIn, getLoggedIn, getLoggedUser, loggedUser}}>
-            {props.children}
+        <AuthContext.Provider value={{
+                loggedIn, 
+                getLoggedIn, 
+                getLoggedUser, 
+                loggedUser, 
+        }}>
+            {children}
         </AuthContext.Provider>
     )
 }

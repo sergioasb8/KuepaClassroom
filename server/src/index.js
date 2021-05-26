@@ -28,12 +28,28 @@ const io = socketio(server);
 
 // stabliching the connection
 io.on('connection', ( socket ) => {
+
+    let name;
     
-    socket.emit('welcomeMessage', 'Bienvenido al server');
+    socket.on('connected', (userName) => {
+        name = userName;
+
+        socket.broadcast.emit('messages', {name: name, message: `${name} se ha conectado`})
+        console.log('user connected')
+    });
+
+    socket.on('messageSent', (loggedUser, message) => {
+        io.emit('messages', {loggedUser, message});
+    });
+
+    socket.on('disconnected', (loggedUser) => {
+        io.emit('messages', {server: "server", message: `${loggedUser} se ha desconectado`});
+    })
 });
 
 /** routes */
 app.use('/api/users', require('./routes/usersRoute.js'));
+app.use('/api/messages', require('./routes/messagesRoute.js'));
 
 // module.exports = app;
 async function main() {

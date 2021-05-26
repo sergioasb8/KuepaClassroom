@@ -1,5 +1,25 @@
+.videoContainer {
+    width: 750px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-success {
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+video {
+    width: 700px;
+    border-radius: 30px;
+}
+
 .chatContainer {
     position: absolute;
+    top: 0;
     right: 0;
     width: 300px;
     min-height: 500px;
@@ -39,6 +59,42 @@
     border: 1px rgb(0, 0, 0);
     background: rgb(0, 0, 0);
     color: #fff;
+}
+
+.displayMessages {
+    height: 62vh;
+    padding: 10px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.displayMessages::-webkit-scrollbar {
+    display: none;
+}
+
+.usernameMessage {
+    position: relative;
+    width: 150px;
+    height: 22px;
+    border-radius: 15px;
+    background: #fff;
+    text-align: center;
+}
+
+.R {
+    margin-left: 130px;
+}
+
+.L {
+    margin-right: 150px;
+}
+
+.contentMessage {
+    position: relative;
+    width: 150px;
+    height: auto;
+    text-align: center;
 }
 
 .writeContainer {
