@@ -66,17 +66,16 @@ export const Class = () => {
     // logout
     const logout = async () => {
 
-        // clean all the values
-        getLoggedUser(null);
-        localStorage.setItem('userLogged', null);
-
         try {
             // asking the server to logout
             await axios.get('http://localhost:4000/api/users/logout');
             // updating to know we logged out
             await getLoggedIn();
             // send socket message
-            socket.emit('disconnected', loggedUser);
+            await socket.emit('disconnected', loggedUser);
+            // clean all the values
+            getLoggedUser(null);
+            localStorage.setItem('userLogged', null);
             // going to the login page
             history.push("/");
         }
