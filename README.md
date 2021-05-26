@@ -8,7 +8,7 @@ Kuepa classroom frontend was bootstrapped with [Create React App](https://github
 
 The user must login in order to access the classes and it will have a chat with all the students online and the moderator
 
-## backend instalation
+## Backend instalation
 
 ### Available Scripts
 
