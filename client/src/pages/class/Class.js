@@ -1,15 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 // import videoChat from '../../assets/img/video.mp4';
 import './class.css';
 import AuthContext from '../../context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import socket from '../../components/Socket';
 
 export const Class = () => {
 
-    const { getLoggedIn } = useContext(AuthContext);
+    const { getLoggedIn, loggedUser } = useContext(AuthContext);
 
     const history = useHistory();
+
+    // probando 
+    socket.on('welcomeMessage', (data) => {
+        console.log(data);
+    });
 
     const logout = async () => {
         try {
@@ -31,7 +37,7 @@ export const Class = () => {
             <div className="chatContainer">
                 <div className="messagesContainer">
                     <div className="navbarClass">
-                        <p>Hola Sergio</p>
+                        <p>Hola {loggedUser}</p>
                         <button onClick={logout}>Cerrar sesion</button>
                     </div>
                     <div className="displayMessages">

@@ -110,8 +110,7 @@ router.route('/login')
             res.cookie("token", token, {    // name and value
                 httpOnly: true,
             }).send();
-
-            }
+        }
         // in case an error happen
         catch(err) {
             console.error(err);

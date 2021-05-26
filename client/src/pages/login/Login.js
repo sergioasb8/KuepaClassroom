@@ -12,21 +12,25 @@ export const Login = () => {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
 
-    const { getLoggedIn } = useContext(AuthContext);
+    const { getLoggedIn, getLoggedUser } = useContext(AuthContext);
     const history = useHistory();
 
     const login = async (e) => {
         e.preventDefault();
+
+        // get the looged user
+        getLoggedUser(user);
+        
         try {
             const loginData = {
                user,
                password
             } 
-
             // sending data to the server
             await axios.post("http://localhost:4000/api/users/login", loginData);
             // updating to know we are logged in
             await getLoggedIn();
+            
             // sendint to login
             history.push("/class");
 
