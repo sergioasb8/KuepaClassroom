@@ -5,6 +5,7 @@ import AuthContext from '../../context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import socket from '../../components/Socket';
+import { Message } from '../../components/Message';
 
 export const Class = () => {
 
@@ -128,7 +129,7 @@ export const Class = () => {
                 ></video>
             </div>
 
-            <form className="chatContainer" onSubmit={sendMessage}>
+            <div className="chatContainer">
                 <div className="messagesContainer">
                     <div className="navbarClass">
                         <p>Hola {loggedUser}</p>
@@ -137,16 +138,18 @@ export const Class = () => {
                     <div className="displayMessages">
                         {
                             chatMessages.map((e, i) => (
-                                <div key={i}>
-                                    <div className={e.loggedUser === loggedUser ? "R usernameMessage" : "L usernameMessage"}>{e.loggedUser}</div>
-                                    <div className={e.loggedUser === loggedUser ? "R contentMessage" : "L contentMessage"}>{e.message}</div>
-                                </div>
+                                <Message 
+                                    key = {i}
+                                    messageAuthor = {e.loggedUser}
+                                    loggedUser = {loggedUser}
+                                    message = {e.message}
+                                />
                             ))
                         }
                         <div ref={divRef}></div>
                     </div>
                 </div>
-                <div className="writeContainer">
+                <form className="writeContainer" onSubmit={sendMessage}>
                     <textarea 
                         cols="30" 
                         rows="10" 
@@ -162,8 +165,8 @@ export const Class = () => {
                         }
                         
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     )
 }

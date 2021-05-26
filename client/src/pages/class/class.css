@@ -73,6 +73,13 @@ video {
     display: none;
 }
 
+.moderadorMessage {
+    width: 280;
+    background: red;
+    text-align: center;
+    border-radius: 15px;
+}
+
 .usernameMessage {
     position: relative;
     width: 150px;
@@ -92,9 +99,17 @@ video {
 
 .contentMessage {
     position: relative;
-    width: 150px;
+    width: 220px;
     height: auto;
     text-align: center;
+}
+
+.RM {
+    margin-left: 60px;
+}
+
+.LM {
+    margin-right: 80px;
 }
 
 .writeContainer {
